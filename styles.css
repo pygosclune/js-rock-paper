@@ -1,0 +1,62 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    height: 100vh;
+    background-color: #040D12;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+}
+
+
+.btn {
+    width: 160px;
+    height: 160px;
+    background-color: #183D3D;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.btn:hover, #playAgainBtn:hover {
+    background-color: #5C8374;
+}
+
+button > p {
+    margin: 0;
+    font-size: 6rem;
+}
+
+ul {
+    display: flex;
+    gap: 16px;
+}
+
+#player-score, #computer-score, #result, #final-result {
+    color: rgba(255, 255, 255, 0.87);
+    font-size: 2rem;
+}
+
+#end-game-modal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+#playAgainBtn {
+    background-color: #183D3D;
+    color: rgba(255, 255, 255, 0.87);
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}

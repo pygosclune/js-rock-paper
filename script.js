@@ -3,6 +3,8 @@ const computerScoreDiv = document.getElementById("computer-score");
 const resultDiv = document.getElementById("result");
 const buttons = document.querySelectorAll(".btn");
 const playAgainBtn = document.getElementById("playAgainBtn");
+const modal = document.getElementById("end-game-modal");
+const finalResult = document.getElementById("final-result");
 
 function getComputerChoice() {
     const possibilities = ["ROCK","PAPER","SCISSORS"];
@@ -71,18 +73,18 @@ let playerWins = 0;
 
 buttons.forEach((button) => {
     button.addEventListener("click", () => {
-        playerSelection = button.id.toUpperCase();
+        const playerSelection = button.id.toUpperCase();
   
         playRound(playerSelection);
 
         if (playerWins === 5) {
-            resultDiv.textContent = "You won a game!!!";
+            finalResult.textContent = "You won a game!!!";
             switchButtons("OFF");
-            playAgainBtn.style.display = "block";
+            modal.style.display = "flex";
         } else if (computerWins === 5) {
-            resultDiv.textContent = "You lost a game!";
+            finalResult.textContent = "You lost a game!";
             switchButtons("OFF");
-            playAgainBtn.style.display = "block";
+            modal.style.display = "flex";
         }
     });
 });
@@ -93,8 +95,8 @@ function resetScore () {
     computerScoreDiv.textContent = `Computer score: ${computerWins}`
     playerScoreDiv.textContent = `Player score: ${playerWins}`
     switchButtons();
-    resultDiv.textContent = "";
-    playAgainBtn.style.display = "none";
+    finalResult.textContent = "";
+    modal.style.display = "none";
 }
 
 function switchButtons(Boolean) {
